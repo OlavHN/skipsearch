@@ -1,11 +1,14 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>NoSearch</ShortName>
+  <ShortName>SkipSearch</ShortName>
   <Description>Skip the search landing page</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/png">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAQAAAD8x0bcAAAAR0lEQVR4AWMY1ECTgRmF38DgAKbRBI8zKCPx/wNFMBUBhT8zJBFUBIZrGITwKoLCpwyuxChyodi6zwyJhBx+DD0IiAvMQQwAw0UqDOAqRCMAAAAASUVORK5CYII=</Image>
-  <Url type="text/html" template="searchURL">
+  <Url type="text/html" template="https://skipsearch.herokuapp.com/search">
+    <Param name="q" value="{searchTerms}"/>
   </Url>
-  <Url type="application/x-suggestions+json" template="suggestionURL"/>
-  <moz:SearchForm>http://example.com/search</moz:SearchForm>
+  <Url type="application/x-suggestions+json" template="https://skipsearch.herokuapp.com/suggest">
+    <Param name="q" value="{searchTerms}"/>
+  </Url>
+  <moz:SearchForm>https://skipsearch.herokuapp.com</moz:SearchForm>
 </OpenSearchDescription>
