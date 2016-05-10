@@ -20,7 +20,8 @@ router.get('/suggest', function *(next) {
   yield next;
 });
 
-app.use(serve('public'));
-
+app
+  .use(serve('public'))
+  .use(router.routes());
 
 app.listen(process.env.PORT || 8080);
