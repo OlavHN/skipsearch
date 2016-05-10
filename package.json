@@ -1,0 +1,13 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "Search engine",
+  "main": "server.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-static": "^2.0.0"
+  }
+}
