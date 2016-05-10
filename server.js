@@ -6,7 +6,9 @@ let request = require('superagent');
 let app = koa();
 
 router.get('/search', function *(next) {
-  this.body = this.request.query.q;
+  let query = this.request.query.q;
+
+  this.redirect('https://google.com/search?q=' + query);
 
   yield next;
 });
