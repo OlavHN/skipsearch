@@ -6,16 +6,18 @@ let app = koa();
 
 router.get('/search', function *(next) {
   console.log('SEARCH');
-  console.log(request.query);
+  console.log(this.request.query);
+  this.body = this.request.query.q;
 
   yield next;
 });
 
 router.get('/suggest', function *(next) {
+  // TODO Augment with http://suggestqueries.google.com/complete/search?output=toolbar&hl=en&q=sea
   console.log('suggest');
-  console.log(request.query);
+  console.log(this.request.query);
 
-  this.body = [request.query.q || '', ['cookie']];
+  this.body = [this.request.query.q || '', ['cookie']];
 
   yield next;
 });
