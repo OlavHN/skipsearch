@@ -5,4 +5,4 @@ let app = koa();
 
 app.use(serve('public'))
 
-app.listen(80);
+app.listen(process.env.PORT || 8080);
