@@ -5,10 +5,16 @@ let request = require('superagent');
 
 let app = koa();
 
+let redirects = {
+  nrk: 'https://www.nrk.no',
+  cnn: 'http://www.cnn.com',
+  mozilla: 'https://www.mozilla.org/en-US/',
+}
+
 router.get('/search', function *(next) {
   let query = this.request.query.q;
 
-  this.redirect('https://google.com/search?q=' + query);
+  this.redirect(redirects[query] || 'https://google.com/search?q=' + query);
 
   yield next;
 });
